@@ -102,13 +102,17 @@
 			}
 		}
 		
-		#question3, #question4{
+		#question3, #question4, #question6{
 			textarea{
 				background-color: #d9e1e2;
 				border: 1px solid #a3a3a3;
 				border-radius: 0px;
 				resize: none;
 			}
+		}
+
+		div#question2, div#question3, div#question4, div#question6{
+			display: none;
 		}
 	}
 }

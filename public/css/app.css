@@ -99,10 +99,18 @@
 }
 
 #contentWrapper form #question3 textarea,
-#contentWrapper form #question4 textarea {
+#contentWrapper form #question4 textarea,
+#contentWrapper form #question6 textarea {
   background-color: #d9e1e2;
   border: 1px solid #a3a3a3;
   border-radius: 0px;
   resize: none;
+}
+
+#contentWrapper form div#question2,
+#contentWrapper form div#question3,
+#contentWrapper form div#question4,
+#contentWrapper form div#question6 {
+  display: none;
 }
 
