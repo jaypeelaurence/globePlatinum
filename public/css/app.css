@@ -50,6 +50,18 @@
   margin-top: 50px;
 }
 
+#contentWrapper div#thankyou {
+  width: 100%;
+  text-align: center;
+}
+
+#contentWrapper div#thankyou p {
+  font-family: lato;
+  font-size: 1em;
+  font-weight: 400;
+  color: #333333;
+}
+
 #contentWrapper form label {
   font-family: lato;
   font-size: 1em;
@@ -69,10 +81,14 @@
   font-size: 0.8em;
   font-weight: 400;
   color: #ffffff;
-  background-color: #4698b3;
   padding: 5px 40px;
   border: 0px;
   border-radius: 0px;
+  background-color: #4698b3;
+}
+
+#contentWrapper form button.disable {
+  background-color: #a3a3a3;
 }
 
 #contentWrapper form .form-group {

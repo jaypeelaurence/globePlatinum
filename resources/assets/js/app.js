@@ -1,7 +1,23 @@
 $(document).ready(function(){
-	$("body").click(function(){
+	$("form").children('button').prop('disabled',true);
+	$("form").children('button').addClass('disable');
+
+	var $validMobileNUmber = 0;
+	var $valid = 0;
+	var $question1 = 0;
+	var $question2 = 0;
+
+
+	$("body").click(function(event){
 		$('input#question1').change(function(){
+			$("form").children('button').addClass('disable');
+
+			$valid = 0;
+			$question1 = 0;
+			$question2 = 0;
+			
 			$('div#question2').css('display','none');
+
 			$('div#question3').css('display','none');
 			$('div#question4').css('display','none');
 			$('div#question6').css('display','none');
@@ -12,19 +28,62 @@ $(document).ready(function(){
 			$('textarea#question5').val("");
 			$('input#question6').prop('checked',false);
 			$('textarea#question7').val("");
+			$('textarea#question7').prop('disabled',true);
 
-			switch($(this).val()){
-				case "No":
-					$('div#question6').css('display','block');
-
-					break;
-				case "Yes":
-					$('div#question2').css('display','block');
-					$('div#question3').css('display','block');
-					$('div#question4').css('display','block');
-
-					break;
+			if($(this).val() == "No"){
+				$('div#question6').css('display','block');
+			}else{	
+				$('div#question2').css('display','block');
+				$('div#question3').css('display','block');
+				$('div#question4').css('display','block');
 			}
 		});
+
+		$('input#mobileNumber').change(function(){
+			if($(this).val().length > 0){
+				$validMobileNUmber = 1;
+			}else{
+				$validMobileNUmber = 0;
+			}
+		});
+
+		if($(event.target).closest('div#YES').length == 1){
+
+			// console.log($(event.target).attr('id'));
+
+			if($(event.target).attr('id') == "question2"){
+				$question1 = 1;
+			}
+
+			if($(event.target).attr('id') == "question4"){
+				$question2 = 1;
+			}
+
+			if($question1 == 1 && $question2 == 1){
+				$valid = 1;
+			}
+
+			console.log($valid);
+		}
+
+		$('input#question6').click(function(){
+			$valid = 1;
+			
+			if($(this).val() == "Others"){
+				$('textarea#question7').prop('disabled',false);
+			}else{
+				$('textarea#question7').prop('disabled',true);
+			}
+		});
+
+		// console.log($validMobileNUmber + " / " + $valid);
+
+		if($validMobileNUmber == 1 && $valid == 1){
+			$("form").children('button').prop('disabled',false);
+			$("form").children('button').removeClass('disable');
+		}else{
+			$("form").children('button').prop('disabled',true);
+			$("form").children('button').addClass('disable');
+		}
 	});
 });
