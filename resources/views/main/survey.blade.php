@@ -19,7 +19,7 @@
 		    	<label>Your Globe Platinum Mobile Number</label>
 			    <div class="mobCont">
 			    	<span>0917 </span>
-			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XXX XXXX">
+			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XXX XXXX" maxlength="7">
 			    </div>
 		  	</div>
  			<div class="form-group" id="question1">

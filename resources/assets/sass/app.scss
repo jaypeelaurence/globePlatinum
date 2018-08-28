@@ -120,10 +120,10 @@
 		}
 
 		.error-display{
-			background-color: #ffd1d1;
-			border: 1px solid #ffafaf;
+			/*background-color: #ffd1d1;
+			border: 1px solid #ffafaf;*/
 			font-family: lato;
-			font-size: 0.6em;
+			font-size: 0.7em;
 			font-weight: 400;
 			font-style: italic;
 			color: #d63e3e;
@@ -160,12 +160,12 @@
 					font-family: lato;
 					font-size: 0.8em;
 					font-weight: 400;
-					color: #333333;
+					color: #495057;
 				}
 				
 				input{
 					display: inline-block;
-					width: 200px;
+					width: 70%;
 					background-color: transparent;
 					border: 0px;
 					border-radius: 0px;

@@ -8,7 +8,7 @@ $(document).ready(function(){
 	var $question2 = 0;
 
 	$("input#mobileNumber").keypress(function(char){
-	    var charCode = (char.which) ? char.which : event.keyCode
+	    var charCode = (char.which) ? char.which : char.keyCode
 	    if (charCode > 31 && (charCode < 48 || charCode > 57))
 	        return false;
 		    return true;
@@ -22,7 +22,7 @@ $(document).ready(function(){
 		}else{
 			$validMobileNUmber = 0;
 
-			$("div#mobileNumber").append("<div class='error-display'>incorrect mobile number.</div>");
+			$("div#mobileNumber").append("<div class='error-display'>incorrect mobile number format.</div>");
 		}
 	});
 
