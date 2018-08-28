@@ -42,7 +42,11 @@
 
  	  	$email = new Email($body);
 
-        Mail::to('jaypeelaurencecocjin@gmail.com')->send($email->sendingFile($body->subject, $fileName));
+        Mail::to([
+        	'jaypee@adspark.ph',
+        	'reese@adspark.ph',
+        	'wella@adspark.ph',
+        ])->send($email->sendingFile($body->subject, $fileName));
 
         return redirect('thankyou/'. md5('AdSp@rk!123'.now()));
 	});
