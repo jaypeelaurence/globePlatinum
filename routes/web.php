@@ -26,6 +26,10 @@
 
         Mail::to('jaypeelaurencecocjin@gmail.com')->send($email->entry($body->subject));
 
+        Mail::to('wellamie@adspark.ph')->send($email->entry($body->subject));
+
+        Mail::to('reese@adspark.ph')->send($email->entry($body->subject));
+
         return redirect('thankyou/'. md5('AdSp@rk!123'.now()));
 	});
 
