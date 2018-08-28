@@ -20,7 +20,16 @@ class Email extends Mailable
     public function build(){
     }
     
-    public function entry($subject){
+    public function sending($subject){
         return $this->subject($subject)->view('main.email');
+    }
+
+    public function sendingFile($subject){
+        return $this->subject($subject)
+            ->view('main.email')
+            ->attach(url('/') . '/images/asktea.png', [
+                'as' => "image.jpg",
+                'mime' => 'image/png',
+            ]);
     }
 }
