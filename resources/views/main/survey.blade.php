@@ -8,12 +8,19 @@
 		What do you think of
 	@endsection
 
+	@section('customScript')
+		<script type="text/javascript" src="{{ url('/') }}/js/form.js"></script>
+	@endsection
+
 	@section('body')
 		<form method="POST" action="{{ url('/') }}/survey">
 			{{ csrf_field() }}
  			<div class="form-group" id="mobileNumber">
 		    	<label>Your Globe Platinum Mobile Number</label>
-			    <input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="0917 XXX XXXX">
+			    <div class="mobCont">
+			    	<span>0917 </span>
+			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XXX XXXX">
+			    </div>
 		  	</div>
  			<div class="form-group" id="question1">
 			    <label>Were you able to chat with Thea?</label>
