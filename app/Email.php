@@ -24,12 +24,12 @@ class Email extends Mailable
         return $this->subject($subject)->view('main.email');
     }
 
-    public function sendingFile($subject){
+    public function sendingFile($subject, $fileName){
         return $this->subject($subject)
             ->view('main.email')
-            ->attach(url('/') . '/images/asktea.png', [
-                'as' => "image.jpg",
-                'mime' => 'image/png',
+            ->attach(public_path() . '/files/' . $fileName, [
+                'as' => $fileName,
+                'mime' => 'text/csv',
             ]);
     }
 }
