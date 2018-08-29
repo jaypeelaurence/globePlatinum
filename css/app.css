@@ -60,6 +60,8 @@
   font-size: 1em;
   font-weight: 400;
   color: #333333;
+  padding: 0px;
+  margin: 0px;
 }
 
 #contentWrapper form label {
@@ -142,10 +144,13 @@
 
 #contentWrapper form .form-group .form-check label {
   font-family: lato;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-weight: 400;
   color: #333333;
-  line-height: 0px;
+}
+
+#contentWrapper form .form-group .form-check input {
+  margin-top: 7px;
 }
 
 #contentWrapper form .form-group#question2,
