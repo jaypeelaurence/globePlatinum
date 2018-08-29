@@ -43,7 +43,7 @@
 					<div class="form-check">
 					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="I don't have an FB messenger">
 					  	<label class="form-check-label">
-					    	I don't have an FB messenger
+					    	I don't have Facebook Messenger.
 					  	</label>
 					</div>
 					<div class="form-check">
