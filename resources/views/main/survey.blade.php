@@ -55,7 +55,7 @@
 					<div class="form-check">
 					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others">
 					  	<label class="form-check-label">
-					   		Others
+					   		Others, pls specify
 					  	</label>
 					</div>
 	     			<textarea class="form-control" id="question7" name="question7" rows="4"></textarea>
