@@ -144,13 +144,9 @@
 
 #contentWrapper form .form-group .form-check label {
   font-family: lato;
-  font-size: 0.8em;
   font-weight: 400;
   color: #333333;
-}
-
-#contentWrapper form .form-group .form-check input {
-  margin-top: 7px;
+  vertical-align: top;
 }
 
 #contentWrapper form .form-group#question2,
