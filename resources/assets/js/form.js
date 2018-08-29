@@ -12,6 +12,8 @@ $(document).ready(function(){
 		form: function(){
 			if($question1 == 1 && $question2 == 1){
 				$valid = 1;
+			}else{
+				$valid = 0;
 			}
 
 			if($validMobileNUmber == 1 && $valid == 1){
@@ -135,7 +137,7 @@ $(document).ready(function(){
 	$('input#question4').click(function(){
 		$question2 = 0;
 		$valid = 0;
-		
+
 		$('textarea#question5').val('');
 
 		if($(this).val() == "No"){
