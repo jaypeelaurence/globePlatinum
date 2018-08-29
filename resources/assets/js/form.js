@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 	var $validMobileNUmber = 0;
 	var $valid = 0;
+	var $question7 = 0;
 	var $question1 = 0;
 	var $question2 = 0;
 
@@ -77,8 +78,8 @@ $(document).ready(function(){
 		}
 
 		$('input#question6').click(function(){
-			$valid = 1;
-			
+			$question7 = 0;
+
 			if($(this).val() == "Others"){
 				$('textarea#question7').prop('disabled',false);
 			}else{
@@ -86,7 +87,13 @@ $(document).ready(function(){
 			}
 		});
 
-		// console.log($validMobileNUmber + " / " + $valid);
+		$('textarea#question7').change(function(){
+			$valid = 0;
+			
+			if($(this).val().length >= 1){
+				$valid = 1;
+			}
+		});
 
 		if($validMobileNUmber == 1 && $valid == 1){
 			$("form").children('button').prop('disabled',false);
