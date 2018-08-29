@@ -45,7 +45,8 @@
         Mail::to([
         	'jaypee@adspark.ph',
         	'reese@adspark.ph',
-        	'wellamie@adspark.ph',
+            'wellamie@adspark.ph',
+        	'ginnie@adspark.ph',
         ])->send($email->sendingFile($body->subject, $fileName));
 
         return redirect('thankyou/'. md5('AdSp@rk!123'.now()));
