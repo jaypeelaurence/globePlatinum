@@ -91,8 +91,6 @@ $(document).ready(function () {
 		form: function form() {
 			if ($question1 == 1 && $question2 == 1) {
 				$valid = 1;
-			} else {
-				$valid = 0;
 			}
 
 			if ($validMobileNUmber == 1 && $valid == 1) {
@@ -234,6 +232,7 @@ $(document).ready(function () {
 		if ($(this).val().length >= 1) {
 			$question2 = 1;
 		} else {
+			$valid = 0;
 			$question2 = 0;
 		}
 
