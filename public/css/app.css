@@ -142,9 +142,10 @@
 
 #contentWrapper form .form-group .form-check label {
   font-family: lato;
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: 400;
   color: #333333;
+  line-height: 0px;
 }
 
 #contentWrapper form .form-group#question2,
