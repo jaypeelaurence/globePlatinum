@@ -151,7 +151,8 @@
 #contentWrapper form .form-group#question2,
 #contentWrapper form .form-group#question3,
 #contentWrapper form .form-group#question4,
-#contentWrapper form .form-group#question6 {
+#contentWrapper form .form-group#question6,
+#contentWrapper form .form-group#question8 {
   display: none;
 }
 
@@ -178,6 +179,6 @@
 
 #contentWrapper form .form-group#mobileNumber span {
   padding: .375rem .75rem;
-  padding-right: 5px;
+  padding-right: 0px;
 }
 

@@ -7,10 +7,11 @@ $(document).ready(function(){
 	var $question7 = 0;
 	var $question1 = 0;
 	var $question2 = 0;
+	var $question5 = 0;
 
 	var validate = {
 		form: function(){
-			if($question1 == 1 && $question2 == 1){
+			if($question1 == 1 && $question2 == 1 && $question5 == 1){
 				$valid = 1;
 			}
 
@@ -23,7 +24,7 @@ $(document).ready(function(){
 			}
 		},
 		status: function(){
-			console.log($validMobileNUmber + " | " + $valid + " / " + $question1 + " | " + $question2);
+			console.log($validMobileNUmber + " | " + $valid + " / " + $question1 + " | " + $question2 + " | " + $question5);
 		}
 	}
 
@@ -37,7 +38,7 @@ $(document).ready(function(){
 	$('input#mobileNumber').keyup(function(){
 		$validMobileNUmber = 0;
 
-		if($(this).val().length == 7){
+		if($(this).val().length == 9){
 			$validMobileNUmber = 1;
 		}
 
@@ -56,7 +57,7 @@ $(document).ready(function(){
 			$("div.error-display").remove();
 		}else {
 			$("div.error-display").remove();
-			$("div#mobileNumber").append("<div class='error-display'>incorrect mobile number format.</div>");
+			$("div#mobileNumber").append("<div class='error-display'>Please enter your 11-digit mobile mobileNumber</div>");
 		}
 
 		validate.form();
@@ -75,12 +76,12 @@ $(document).ready(function(){
 		$('div#question3').css('display','none');
 		$('div#question4').css('display','none');
 		$('div#question6').css('display','none');
+		$('div#question8').css('display','none');
 
 		$('input#question2').prop('checked',false);
 		$('textarea#question3').val("");
 		$('input#question4').prop('checked',false);
 		$('textarea#question5').val("");
-		$('textarea#question5').prop('disabled',true);
 		$('input#question6').prop('checked',false);
 		$('textarea#question7').val("");
 		$('textarea#question7').prop('disabled',true);
@@ -139,11 +140,15 @@ $(document).ready(function(){
 		$('textarea#question5').val('');
 
 		if($(this).val() == "No"){
-			$('textarea#question5').prop('disabled',false);
+			$question2 = 1;
+			$question5 = 0;
+
+			$('div#question8').css('display','block');
 		}else{
 			$question2 = 1;
+			$question5 = 1;
 
-			$('textarea#question5').prop('disabled',true);
+			$('div#question8').css('display','none');
 		}
 
 		validate.form();
@@ -152,10 +157,10 @@ $(document).ready(function(){
 
 	$('textarea#question5').keyup(function(){
 		if($(this).val().length >= 1){
-			$question2 = 1;
+			$question5 = 1;
 		}else{
 			$valid = 0;
-			$question2 = 0;
+			$question5 = 0;
 		}
 
 		validate.form();

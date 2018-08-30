@@ -18,8 +18,8 @@
  			<div class="form-group" id="mobileNumber">
 		    	<label>Your Globe Platinum Mobile Number</label>
 			    <div class="mobCont">
-			    	<span>0917 </span>
-			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XXX XXXX" maxlength="7">
+			    	<span>09</span>
+			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XX-XXXXXXX" maxlength="7">
 			    </div>
 		  	</div>
  			<div class="form-group" id="question1">
@@ -39,7 +39,7 @@
 	 		</div>
 	 		<div id="NO">
 		 		<div class="form-group" id="question6">
-				    <label>Why not</label>
+				    <label>Why not?</label>
 					<div class="form-check">
 					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="I don't have an FB messenger">
 					  	<label class="form-check-label">
@@ -47,15 +47,15 @@
 					  	</label>
 					</div>
 					<div class="form-check">
-					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not related to me">
+					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me">
 					  	<label class="form-check-label">
-					   		This service is not related to me
+					   		This service is not relevant to me
 					  	</label>
 					</div>
 					<div class="form-check">
 					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others">
 					  	<label class="form-check-label">
-					   		Others, pls specify
+					   		Others, pls specify:
 					  	</label>
 					</div>
 	     			<textarea class="form-control" id="question7" name="question7" rows="4"></textarea>
@@ -96,7 +96,7 @@
 					</div>
 		 		</div>
 	 			<div class="form-group" id="question3">
-			    	<label>Is there anything Thea can do to make your experience better?</label>
+			    	<label>Is there anything Thea can do to make the exeperience better?</label>
 		     		<textarea class="form-control" name="question3" id="question3" rows="4"></textarea>
 			  	</div>
 	 			<div class="form-group" id="question4">
@@ -113,6 +113,9 @@
 					   		No
 					  	</label>
 					</div>
+			  	</div>
+			  	<div class="form-group" id="question8">
+				    <label>What about the experience did you not like?</label>
 	     			<textarea class="form-control" id="question5" name="question5" rows="4"></textarea>
 			  	</div>
 		  	</div>
