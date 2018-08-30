@@ -13,7 +13,7 @@
 	});
 
 	Route::post('/survey', function (Request $request){
-		$message = 'Date,Mobile Number,Were you able to chat with Thea?,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Why not?, ,Will you most likely chat with Thea again?,' . "\n";
+		$message = 'Date,Your Globe Platinum Mobile Number,Were you able to chat with Thea?,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Why not?,If no, what about your experience did you not like?,Will you most likely chat with Thea again?,' . "\n";
 
 		$body = new \stdClass();
 
