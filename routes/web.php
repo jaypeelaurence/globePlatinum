@@ -23,7 +23,7 @@
 
     	$body->date = date('Y-m-d h:m');
 
-        $body->subject = "Globe Platinum EDM | Ask Thea Survey";
+        $body->subject = "Globe Platinum Ask Thea Survey";
 
         $message .= $body->date . ',';
         $message .= '0917'.$request->mobileNumber . ',';
@@ -47,6 +47,9 @@
         	'reese@adspark.ph',
             'wellamie@adspark.ph',
         	'ginnie@adspark.ph',
+            'ycunda@globe.com.ph',
+            'jealcantara@globe.com.ph',
+            'cdloyola@globe.com.ph',
         ])->send($email->sendingFile($body->subject, $fileName));
 
         return redirect('thankyou/'. md5('AdSp@rk!123'.now()));

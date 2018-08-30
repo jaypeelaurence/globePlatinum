@@ -5,7 +5,7 @@
 	@endsection
 
 	@section('heading')
-		What do you think of
+		WHAT DO YOU THINK OF
 	@endsection
 
 	@section('customScript')
