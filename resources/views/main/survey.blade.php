@@ -19,7 +19,7 @@
 		    	<label>Your Globe Platinum Mobile Number</label>
 			    <div class="mobCont">
 			    	<span>09</span>
-			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XX-XXXXXXX" maxlength="7">
+			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XX-XXXXXXX" maxlength="9">
 			    </div>
 		  	</div>
  			<div class="form-group" id="question1">
@@ -96,7 +96,7 @@
 					</div>
 		 		</div>
 	 			<div class="form-group" id="question3">
-			    	<label>Is there anything Thea can do to make the exeperience better?</label>
+			    	<label>Is there anything Thea can do to make the experience better?</label>
 		     		<textarea class="form-control" name="question3" id="question3" rows="4"></textarea>
 			  	</div>
 	 			<div class="form-group" id="question4">
@@ -115,7 +115,7 @@
 					</div>
 			  	</div>
 			  	<div class="form-group" id="question8">
-				    <label>What about the experience did you not like?</label>
+				    <label>If no, what about your experience did you not like?</label>
 	     			<textarea class="form-control" id="question5" name="question5" rows="4"></textarea>
 			  	</div>
 		  	</div>

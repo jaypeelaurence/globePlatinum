@@ -86,11 +86,12 @@ $(document).ready(function () {
 	var $question7 = 0;
 	var $question1 = 0;
 	var $question2 = 0;
+	var $question3 = 0;
 	var $question5 = 0;
 
 	var validate = {
 		form: function form() {
-			if ($question1 == 1 && $question2 == 1 && $question5 == 1) {
+			if ($question1 == 1 && $question2 == 1 && $question5 == 1 && $question3 == 1) {
 				$valid = 1;
 			}
 
@@ -103,7 +104,7 @@ $(document).ready(function () {
 			}
 		},
 		status: function status() {
-			console.log($validMobileNUmber + " | " + $valid + " / " + $question1 + " | " + $question2 + " | " + $question5);
+			console.log($validMobileNUmber + " | " + $valid + " / " + $question1 + " | " + $question2 + " | " + $question3 + " | " + $question5);
 		}
 	};
 
@@ -127,7 +128,7 @@ $(document).ready(function () {
 	$('input#mobileNumber').change(function () {
 		$validMobileNUmber = 0;
 
-		if ($(this).val().length == 7) {
+		if ($(this).val().length == 9) {
 			$validMobileNUmber = 1;
 
 			$("div.error-display").remove();
@@ -135,7 +136,7 @@ $(document).ready(function () {
 			$("div.error-display").remove();
 		} else {
 			$("div.error-display").remove();
-			$("div#mobileNumber").append("<div class='error-display'>Please enter your 11-digit mobile mobileNumber</div>");
+			$("div#mobileNumber").append("<div class='error-display'>Please enter your 11-digit mobile number</div>");
 		}
 
 		validate.form();
@@ -239,6 +240,18 @@ $(document).ready(function () {
 		} else {
 			$valid = 0;
 			$question5 = 0;
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('textarea#question3').keyup(function () {
+		if ($(this).val().length >= 1) {
+			$question3 = 1;
+		} else {
+			$valid = 0;
+			$question3 = 0;
 		}
 
 		validate.form();
