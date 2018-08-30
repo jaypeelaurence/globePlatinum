@@ -49,13 +49,13 @@
 					<div class="form-check">
 					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me">
 					  	<label class="form-check-label">
-					   		This service is not relevant to me
+					   		This service is not relevant to me.
 					  	</label>
 					</div>
 					<div class="form-check">
 					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others">
 					  	<label class="form-check-label">
-					   		Others, pls specify:
+					   		Others, please specify:
 					  	</label>
 					</div>
 	     			<textarea class="form-control" id="question7" name="question7" rows="4"></textarea>
@@ -96,7 +96,7 @@
 					</div>
 		 		</div>
 	 			<div class="form-group" id="question3">
-			    	<label>Is there anything Thea can do to make the experience better?</label>
+			    	<label>Is there anything Thea can do to make your experience better?</label>
 		     		<textarea class="form-control" name="question3" id="question3" rows="4"></textarea>
 			  	</div>
 	 			<div class="form-group" id="question4">
