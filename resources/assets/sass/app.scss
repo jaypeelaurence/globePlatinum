@@ -1,3 +1,14 @@
+body {
+  font-family: Lato;
+}
+
+a, button {
+	&:hover{
+	  transition: .5s;
+	  text-decoration: none;
+	}
+}
+
 #container{
 	margin: 0px auto;
 	max-width: 900px;
@@ -147,6 +158,54 @@
 					color: #333333;	
 				}
 			}
+
+			.radio{
+			    &:hover{
+				 	input ~ span {
+			    		background-color: #ccc;
+			    	}
+			    }
+
+			    label{
+			    	padding-left: 10px;
+			    }
+
+			    input{
+			    	position: absolute;
+				    opacity: 0;
+
+				    &:checked ~ span{
+					    background-color: #1c375c;
+					    border: 1px solid #1c375c;
+				    }
+
+				    &:checked ~ span:after {
+					    display: block;
+					}
+			    }
+
+			    span{
+			    	position: absolute;
+				    top: 3px;
+				    left: 0;
+				    height: 15px;
+				    width: 15px;
+				    display: block;
+				    background-color: #ffffff;
+				    border-radius: 50%;
+				    border: 1px solid #a3a3a3;
+		    	  	transition: .5s;
+				 	text-decoration: none;
+				    cursor: pointer;
+
+				    &:after{
+						content: "";
+					    position: absolute;
+					    display: none;
+				    }
+			    }
+			}
+
 
 			&#question2, &#question3, &#question4, &#question6, &#question8{
 				display: none;

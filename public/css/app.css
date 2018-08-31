@@ -1,3 +1,14 @@
+body {
+  font-family: Lato;
+}
+
+a:hover,
+button:hover {
+  -webkit-transition: .5s;
+  transition: .5s;
+  text-decoration: none;
+}
+
 #container {
   margin: 0px auto;
   max-width: 900px;
@@ -146,6 +157,50 @@
   font-family: lato;
   font-weight: 400;
   color: #333333;
+}
+
+#contentWrapper form .form-group .radio:hover input ~ span {
+  background-color: #ccc;
+}
+
+#contentWrapper form .form-group .radio label {
+  padding-left: 10px;
+}
+
+#contentWrapper form .form-group .radio input {
+  position: absolute;
+  opacity: 0;
+}
+
+#contentWrapper form .form-group .radio input:checked ~ span {
+  background-color: #1c375c;
+  border: 1px solid #1c375c;
+}
+
+#contentWrapper form .form-group .radio input:checked ~ span:after {
+  display: block;
+}
+
+#contentWrapper form .form-group .radio span {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  display: block;
+  background-color: #ffffff;
+  border-radius: 50%;
+  border: 1px solid #a3a3a3;
+  -webkit-transition: .5s;
+  transition: .5s;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#contentWrapper form .form-group .radio span:after {
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 #contentWrapper form .form-group#question2,

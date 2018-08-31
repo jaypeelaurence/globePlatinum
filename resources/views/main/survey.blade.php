@@ -13,7 +13,7 @@
 	@endsection
 
 	@section('body')
-		<form method="POST" action="{{ url('/') }}/">
+		<form method="POST" action="{{ url('/') }}">
 			{{ csrf_field() }}
  			<div class="form-group" id="mobileNumber">
 		    	<label>Your Globe Platinum Mobile Number</label>
@@ -24,15 +24,17 @@
 		  	</div>
  			<div class="form-group" id="question1">
 			    <label>Were you able to chat with Thea?</label>
-				<div class="form-check">
-				  	<input class="form-check-input" id="question1" type="radio" name="question1" value="Yes">
+				<div class="form-check radio">
 				  	<label class="form-check-label">
+					  	<input class="form-check-input" id="question1" type="radio" name="question1" value="Yes">
+					  	<span class="span"></span>
 				    	Yes
 				  	</label>
 				</div>
-				<div class="form-check">
-				  	<input class="form-check-input" type="radio" name="question1" id="question1" value="No">
+				<div class="form-check radio">
 				  	<label class="form-check-label">
+					  	<input class="form-check-input" type="radio" name="question1" id="question1" value="No">
+					  	<span class="span"></span>
 				   		No
 				  	</label>
 				</div>
@@ -40,21 +42,24 @@
 	 		<div id="NO">
 		 		<div class="form-group" id="question6">
 				    <label>Why not?</label>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="I don't have an FB messenger">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
+						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="I don't have an FB messenger">
+						  	<span></span>
 					    	I don't have Facebook Messenger.
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					   		This service is not relevant to me.
+						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me">
+						  	<span></span>
+						   		This service is not relevant to me.
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
+						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others">
+						  	<span></span>
 					   		Others, please specify:
 					  	</label>
 					</div>
@@ -64,34 +69,39 @@
 	 		<div id="YES">
 		 		<div class="form-group" id="question2">
 				    <label>How would you rate your experience with Thea?</label>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Very satisfied">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
+						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Very satisfied">
+						  	<span></span>
 					    	Very satisfied
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Somewhat satisfied">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					    	Somewhat satisfied
+						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Somewhat satisfied">
+						  	<span></span>
+						    	Somewhat satisfied
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Neither satisfied nor dissatisfied">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					    	Neither satisfied nor dissatisfied
+						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Neither satisfied nor dissatisfied">
+						  	<span></span>
+						    	Neither satisfied nor dissatisfied
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Somewhat dissatisfied">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					    	Somewhat dissatisfied
+						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Somewhat dissatisfied">
+						  	<span></span>
+						    	Somewhat dissatisfied
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Very dissatisfied">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					    	Very dissatisfied
+						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Very dissatisfied">
+						  	<span></span>
+						    	Very dissatisfied
 					  	</label>
 					</div>
 		 		</div>
@@ -101,16 +111,18 @@
 			  	</div>
 	 			<div class="form-group" id="question4">
 				    <label>Will you most likely chat with Thea again?</label>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question4" type="radio" name="question4" value="Yes">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					    	Yes
+						  	<input class="form-check-input" id="question4" type="radio" name="question4" value="Yes">
+						  	<span></span>
+						    	Yes
 					  	</label>
 					</div>
-					<div class="form-check">
-					  	<input class="form-check-input" id="question4" type="radio" name="question4" value="No">
+					<div class="form-check radio">
 					  	<label class="form-check-label">
-					   		No
+						  	<input class="form-check-input" id="question4" type="radio" name="question4" value="No">
+						  	<span></span>
+						   		No
 					  	</label>
 					</div>
 			  	</div>

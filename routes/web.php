@@ -15,32 +15,28 @@
 	});
 
 	Route::post('/', function (Request $request){
+		// $contents = preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question7);
+
+		// return $contents;
+
 		$message = 'Date,Your Globe Platinum Mobile Number,Were you able to chat with Thea?,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Why not?,If no, what about your experience did you not like?,Will you most likely chat with Thea again?,' . "\n";
-
-		$body = new \stdClass();
-
-        foreach($request->all() as $key => $value){
-            $body->{$key} = $value;
-        }
-
-    	$body->date = date('Y-m-d h:m');
-
-        $body->subject = "Globe Platinum Ask Thea Survey";
 
         $message .= date('Y-m-d h:m') . ',';
         $message .= '09'.$request->mobileNumber . ',';
         $message .= $request->question1 . ',';
         $message .= ($request->question2 ?? 'N/A') . ',';
-        $message .= ($request->question3 ?? 'N/A') . ',';
+        $message .= ($request->question3 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question3) : 'N/A') . ',';
         $message .= ($request->question6 ?? 'N/A') . ',';
-        $message .= ($request->question7 ?? 'N/A') . ',';
+        $message .= ($request->question7 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question7) : 'N/A') . ',';
         $message .= ($request->question4 ?? 'N/A') . ',';
-        $message .= ($request->question5 ?? 'N/A') . ',';
+        $message .= ($request->question5 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question5) : 'N/A') . ',';
         $message .= "\n";
 
 		$fileName = 'globe_platinum_edm-' . time() . '.csv';
 
         Storage::disk('public_uploads')->put($fileName, $message);
+
+		return $message;
 
         $body = "<table border='1'>
 		    <tr>
@@ -121,7 +117,6 @@
 	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
 	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
 	    $mail->addCC('adspark_tester@gmail.com');
-	    $mail->addCC('jaypeelaurencecocjin@gmail.com');
 
 	    $mail->isHTML(true);
 	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
