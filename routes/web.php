@@ -111,26 +111,26 @@
 		    </tr>
 		</table>";
 		
-		// $mail = new PHPMailer\PHPMailer(true);
-	 //    $mail->Host = 'smtpout.asia.secureserver.net';
-	 //    $mail->Username = 'form@globeplatinumsurvey.com';
-	 //    $mail->Password = 'admin123';
-	 //    $mail->Port = 25;
+		$mail = new PHPMailer\PHPMailer(true);
+	    $mail->Host = 'smtpout.asia.secureserver.net';
+	    $mail->Username = 'form@globeplatinumsurvey.com';
+	    $mail->Password = 'admin123';
+	    $mail->Port = 25;
 
-	 //    //Recipients
-	 //    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
-	 //    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
-	 //    $mail->addCC('adspark_tester@gmail.com');
-	 //    $mail->addCC('jaypeelaurencecocjin@gmail.com');
+	    //Recipients
+	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
+	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
+	    $mail->addCC('adspark_tester@gmail.com');
+	    $mail->addCC('jaypeelaurencecocjin@gmail.com');
 
-	 //    $mail->isHTML(true);
-	 //    $mail->Subject = 'Globe Platinum Ask Thea Survey';
-	 //    $mail->Body = $body;
+	    $mail->isHTML(true);
+	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
+	    $mail->Body = $body;
 
-	 //    $fileAttachement = public_path() . '/files/' . $fileName;
-  //   	$mail->addAttachment($fileAttachement);
+	    $fileAttachement = public_path() . '/files/' . $fileName;
+    	$mail->addAttachment($fileAttachement);
 
-	 //    $mail->send();
+	    $mail->send();
 
         return redirect('thankyou/'. strtotime('now'));
 	});
