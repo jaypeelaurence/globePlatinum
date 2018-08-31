@@ -107,7 +107,6 @@
 	    $mail->Password = 'admin123';
 	    $mail->Port = 25;
 
-	    //Recipients
 	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
 	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
 	    $mail->addCC('adsparktester@gmail.com');
