@@ -120,28 +120,17 @@
 	    //Recipients
 	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
 	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
+	    $mail->addCC('adspark_tester@gmail.com');
 	    $mail->addCC('jaypeelaurencecocjin@gmail.com');
 
 	    $mail->isHTML(true);
 	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
 	    $mail->Body = $body;
 
-	    $fileAttachement = SITE_ROOT . public_path() . '/files/' . $fileName;
+	    $fileAttachement = public_path() . '/files/' . $fileName;
     	$mail->addAttachment($fileAttachement);
 
 	    $mail->send();
-
- 	  	// $email = new Email($body);
-
-     //    Mail::to([
-     //    	'jaypee@adspark.ph',
-     //    	'reese@adspark.ph',
-     //        'wellamie@adspark.ph',
-     //    	'ginnie@adspark.ph',
-     //        'ycunda@globe.com.ph',
-     //        'jealcantara@globe.com.ph',
-     //        'cdloyola@globe.com.ph',
-     //    ])->send($email->sendingFile($body->subject, $fileName));
 
         return redirect('thankyou/'. md5('AdSp@rk!123'.now()));
 	});

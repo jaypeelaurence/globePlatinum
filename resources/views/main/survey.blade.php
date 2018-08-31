@@ -14,7 +14,6 @@
 
 	@section('body')
 		<form method="POST" action="{{ url('/') }}/survey">
-		<!-- <form method="POST" action="https://globeplatinumsurvey.com/files/mailer/index.php"> -->
 			{{ csrf_field() }}
  			<div class="form-group" id="mobileNumber">
 		    	<label>Your Globe Platinum Mobile Number</label>
