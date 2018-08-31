@@ -116,7 +116,7 @@
 	    //Recipients
 	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
 	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
-	    $mail->addCC('adspark_tester@gmail.com');
+	    $mail->addCC('adsparktester@gmail.com');
 
 	    $mail->isHTML(true);
 	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
