@@ -8,6 +8,8 @@
 
 	use App\Email;
 
+	use PHPMailer\PHPMailer;
+
 	Route::get('/survey', function (){
 	    return view('main.survey');
 	});
@@ -25,8 +27,8 @@
 
         $body->subject = "Globe Platinum Ask Thea Survey";
 
-        $message .= $body->date . ',';
-        $message .= '0917'.$request->mobileNumber . ',';
+        $message .= date('Y-m-d h:m') . ',';
+        $message .= '09'.$request->mobileNumber . ',';
         $message .= $request->question1 . ',';
         $message .= ($request->question2 ?? 'N/A') . ',';
         $message .= ($request->question3 ?? 'N/A') . ',';
@@ -40,17 +42,106 @@
 
         Storage::disk('public_uploads')->put($fileName, $message);
 
- 	  	$email = new Email($body);
+        $body = "<table border='1'>
+		    <tr>
+		        <td>
+		            <b>Date:</b>
+		        </td>
+		        <td>
+		            ".date('Y-m-d h:m')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>Mobile Number:</b>
+		        </td>
+		        <td>
+		            0917".$request->mobileNumber."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>Were you able to chat with Thea?:</b>
+		        </td>
+		        <td>
+		           ".$request->question1."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>How would you rate your experience with Thea?:</b>
+		        </td>
+		        <td>
+		            ".($request->question2 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>Is there anything Thea can do to make your experience better?:</b>
+		        </td>
+		        <td>
+		            ".($request->question3 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>Why not?:</b>
+		        </td>
+		        <td>
+		           ".($request->question6 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td colspan='2'>
+		           ".($request->question7 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>Will you most likely chat with Thea again?:</b>
+		        </td>
+		        <td>
+		           ".($request->question4 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td colspan='2'>
+		           ".($request->question5 ?? 'N/A')."
+		        </td>
+		    </tr>
+		</table>";
+		
+		$mail = new PHPMailer\PHPMailer(true);
+	    $mail->Host = 'smtpout.asia.secureserver.net';
+	    $mail->Username = 'form@globeplatinumsurvey.com';
+	    $mail->Password = 'admin123';
+	    $mail->Port = 25;
 
-        Mail::to([
-        	'jaypee@adspark.ph',
-        	'reese@adspark.ph',
-            'wellamie@adspark.ph',
-        	'ginnie@adspark.ph',
-            'ycunda@globe.com.ph',
-            'jealcantara@globe.com.ph',
-            'cdloyola@globe.com.ph',
-        ])->send($email->sendingFile($body->subject, $fileName));
+	    //Recipients
+	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
+	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
+	    $mail->addCC('jaypeelaurencecocjin@gmail.com');
+
+	    $mail->isHTML(true);
+	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
+	    $mail->Body = $body;
+
+	    $fileAttachement = SITE_ROOT . public_path() . '/files/' . $fileName;
+    	$mail->addAttachment($fileAttachement);
+
+	    $mail->send();
+
+ 	  	// $email = new Email($body);
+
+     //    Mail::to([
+     //    	'jaypee@adspark.ph',
+     //    	'reese@adspark.ph',
+     //        'wellamie@adspark.ph',
+     //    	'ginnie@adspark.ph',
+     //        'ycunda@globe.com.ph',
+     //        'jealcantara@globe.com.ph',
+     //        'cdloyola@globe.com.ph',
+     //    ])->send($email->sendingFile($body->subject, $fileName));
 
         return redirect('thankyou/'. md5('AdSp@rk!123'.now()));
 	});
