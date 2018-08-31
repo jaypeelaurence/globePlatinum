@@ -101,7 +101,7 @@
 		    </tr>
 		</table>";
 		
-		$mail = new PHPMailer\PHPMailer(true);
+		$mail = new PHPMailer\PHPMailer();
 	    $mail->Host = 'smtpout.asia.secureserver.net';
 	    $mail->Username = 'form@globeplatinumsurvey.com';
 	    $mail->Password = 'admin123';
