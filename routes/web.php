@@ -15,10 +15,6 @@
 	});
 
 	Route::post('/', function (Request $request){
-		// $contents = preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question7);
-
-		// return $contents;
-
 		$message = 'Date,Your Globe Platinum Mobile Number,Were you able to chat with Thea?,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Why not?,If no, what about your experience did you not like?,Will you most likely chat with Thea again?,' . "\n";
 
         $message .= date('Y-m-d h:m') . ',';
@@ -35,8 +31,6 @@
 		$fileName = 'globe_platinum_edm-' . time() . '.csv';
 
         Storage::disk('public_uploads')->put($fileName, $message);
-
-		return $message;
 
         $body = "<table border='1'>
 		    <tr>
