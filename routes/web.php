@@ -15,17 +15,21 @@
 	});
 
 	Route::post('/', function (Request $request){
-		$message = 'Date,Your Globe Platinum Mobile Number,Were you able to chat with Thea?,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Why not?,If no, what about your experience did you not like?,Will you most likely chat with Thea again?,' . "\n";
+		$date = date('Y-m-d h:m');
 
-        $message .= date('Y-m-d h:m') . ',';
+		$message = 'Date,Your Globe Platinum Mobile Number,Was the email you received from Globe Platinum easy to understand?,If no can you give feedback on how to make communication better?,Were you able to chat with Thea?,Why not?,Others,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Will you most likely chat with Thea again?,If no what about your experience did you not like?' . "\n";
+
+        $message .= $date . ',';
         $message .= '09'.$request->mobileNumber . ',';
+        $message .= $request->question5 . ',';
+        $message .= ($request->question9 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question9) : 'N/A') . ',';
         $message .= $request->question1 . ',';
-        $message .= ($request->question2 ?? 'N/A') . ',';
-        $message .= ($request->question3 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question3) : 'N/A') . ',';
         $message .= ($request->question6 ?? 'N/A') . ',';
         $message .= ($request->question7 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question7) : 'N/A') . ',';
+        $message .= ($request->question2 ?? 'N/A') . ',';
+        $message .= ($request->question3 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question3) : 'N/A') . ',';
         $message .= ($request->question4 ?? 'N/A') . ',';
-        $message .= ($request->question5 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question5) : 'N/A') . ',';
+        $message .= ($request->question8 ? preg_replace('/(?:(?:,)|(?: )|(?:\r\n))/',' ',$request->question8) : 'N/A') . ',';
         $message .= "\n";
 
 		$fileName = 'globe_platinum_edm-' . time() . '.csv';
@@ -38,12 +42,12 @@
 		            <b>Date:</b>
 		        </td>
 		        <td>
-		            ".date('Y-m-d h:m')."
+		            ".$date."
 		        </td>
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>Mobile Number:</b>
+		            <b>Mobile Number</b>
 		        </td>
 		        <td>
 		            09".$request->mobileNumber."
@@ -51,52 +55,76 @@
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>Were you able to chat with Thea?:</b>
+		            <b>Was the email you received from Globe Platinum easy to understand?</b>
 		        </td>
 		        <td>
-		           ".$request->question1."
+		            ".$request->question5."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td colspan='2'>
+		            <b>If no, can you give feedback on how to make communication better?</b>
+		        </td>
+		    </tr>
+		    <tr>
+		        <td colspan='2'>
+		            ".($request->question9 ?? 'N/A')."
 		        </td>
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>How would you rate your experience with Thea?:</b>
+		            <b>Were you able to chat with Thea?</b>
+		        </td>
+		        <td>
+		            ".$request->question1."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>Why not?</b>
+		        </td>
+		        <td>
+		            ".($request->question6 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td colspan='2'>
+		            <b>Others, please specify:</b>
+		        </td>
+		        <td colspan='2'>
+		            ".($request->question7 ?? 'N/A')."
+		        </td>
+		    </tr>
+		    <tr>
+		        <td>
+		            <b>How would you rate your experience with Thea?</b>
 		        </td>
 		        <td>
 		            ".($request->question2 ?? 'N/A')."
 		        </td>
 		    </tr>
 		    <tr>
-		        <td>
-		            <b>Is there anything Thea can do to make your experience better?:</b>
+		        <td colspan='2'>
+		            <b>Is there anything Thea can do to make your experience better?</b>
 		        </td>
-		        <td>
+		        <td colspan='2'>
 		            ".($request->question3 ?? 'N/A')."
 		        </td>
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>Why not?:</b>
+		            <b>Will you most likely chat with Thea again?</b>
 		        </td>
 		        <td>
-		           ".($request->question6 ?? 'N/A')."
+		            ".($request->question4 ?? 'N/A')."
 		        </td>
 		    </tr>
 		    <tr>
 		        <td colspan='2'>
-		           ".($request->question7 ?? 'N/A')."
+		            <b>If no, what about your experience did you not like?</b>
 		        </td>
-		    </tr>
-		    <tr>
-		        <td>
-		            <b>Will you most likely chat with Thea again?:</b>
-		        </td>
-		        <td>
-		           ".($request->question4 ?? 'N/A')."
-		        </td>
-		    </tr>
-		    <tr>
 		        <td colspan='2'>
-		           ".($request->question5 ?? 'N/A')."
+		            ".($request->question8 ?? 'N/A')."
 		        </td>
 		    </tr>
 		</table>";
