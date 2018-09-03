@@ -23,7 +23,7 @@
 			    </div>
 		  	</div>
 	 		<div class="form-group" id="question5">
-			    <label>Was the email you received from Globe Platinum easy to understand?</label>
+			    <label>Was the email that you received from Globe Platinum easy to understand?</label>
 				<div class="form-check radio">
 				  	<label class="form-check-label">
 					  	<input class="form-check-input" id="question5" type="radio" name="question5" value="Yes">
@@ -40,7 +40,7 @@
 				</div>
 	 		</div>
  			<div class="form-group" id="question9">
-		    	<label>If no, can you give feedback on how to make communication better?</label>
+		    	<label>If not, can you tell us which part of the email can we improve on?</label>
 	     		<textarea class="form-control" name="question9" id="question9" rows="4"></textarea>
 		  	</div>
  			<div class="form-group" id="question1">
@@ -74,14 +74,14 @@
 					  	<label class="form-check-label">
 						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me.">
 						  	<span></span>
-						   		This service is not relevant to me.
+						   		This service isn't relevant to me.
 					  	</label>
 					</div>
 					<div class="form-check radio">
 					  	<label class="form-check-label">
 						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others, please specify:">
 						  	<span></span>
-					   		Others, please specify:
+					   		Others, please specify below:
 					  	</label>
 					</div>
 	     			<textarea class="form-control" id="question7" name="question7" rows="4"></textarea>
@@ -89,7 +89,7 @@
 	 		</div>
 	 		<div id="YES">
 		 		<div class="form-group" id="question2">
-				    <label>How would you rate your experience with Thea?</label>
+				    <label>Can you give Thea a tip on how she can be a better digital assistant?</label>
 					<div class="form-check radio">
 					  	<label class="form-check-label">
 						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Very satisfied">
@@ -148,7 +148,7 @@
 					</div>
 			  	</div>
 			  	<div class="form-group" id="question8">
-				    <label>If no, what about your experience did you not like?</label>
+				    <label>If not, please share with us your reason/s and the actual experience.</label>
 	     			<textarea class="form-control" id="question8" name="question8" rows="4"></textarea>
 			  	</div>
 		  	</div>

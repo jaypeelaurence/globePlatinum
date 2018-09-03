@@ -17,7 +17,7 @@
 	Route::post('/', function (Request $request){
 		$date = date('Y-m-d h:m');
 
-		$message = 'Date,Your Globe Platinum Mobile Number,Was the email you received from Globe Platinum easy to understand?,If no can you give feedback on how to make communication better?,Were you able to chat with Thea?,Why not?,Others,How would you rate your experience with Thea?,Is there anything Thea can do to make your experience better?,Will you most likely chat with Thea again?,If no what about your experience did you not like?' . "\n";
+		$message = 'Date,Your Globe Platinum Mobile Number,Was the email that you received from Globe Platinum easy to understand?,If not can you tell us which part of the email can we improve on?,Were you able to chat with Thea?,Why not?,Others please specify below:,How would you rate your experience with Thea?,Can you give Thea a tip on how she can be a better digital assistant?,Will you most likely chat with Thea again?,If not please share with us your reason s and the actual experience.' . "\n";
 
         $message .= $date . ',';
         $message .= '09'.$request->mobileNumber . ',';
@@ -55,7 +55,7 @@
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>Was the email you received from Globe Platinum easy to understand?</b>
+		            <b>Was the email that you received from Globe Platinum easy to understand?</b>
 		        </td>
 		        <td>
 		            ".$request->question5."
@@ -63,7 +63,7 @@
 		    </tr>
 		    <tr>
 		        <td colspan='2'>
-		            <b>If no, can you give feedback on how to make communication better?</b>
+		            <b>If not, can you tell us which part of the email can we improve on?</b>
 		        </td>
 		    </tr>
 		    <tr>
@@ -99,7 +99,7 @@
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>How would you rate your experience with Thea?</b>
+		            <b>Can you give Thea a tip on how she can be a better digital assistant?</b>
 		        </td>
 		        <td>
 		            ".($request->question2 ?? 'N/A')."
@@ -125,7 +125,7 @@
 		    </tr>
 		    <tr>
 		        <td colspan='2'>
-		            <b>If no, what about your experience did you not like?</b>
+		            <b>If not, please share with us your reason/s and the actual experience.</b>
 		        </td>
 		    </tr>
 		    <tr>
