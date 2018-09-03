@@ -137,24 +137,24 @@
 		
 		$mail = new PHPMailer\PHPMailer();
 
-		$mail->SMTPDebug = 2;
-	    $mail->isSMTP();
-	    $mail->Host = 'smtp.gmail.com';
-	    $mail->Username = 'adspark.globe.edm@gmail.com';
-   		$mail->Password = 'kygyfrjosfldkaak';
-   		$mail->SMTPSecure = 'tls';
-   		$mail->SMTPAuth = true;
-   		$mail->Port = 587;
-   		$mail->setFrom('adspark.globe.edm@gmail.com', 'Globe Platinum');
-    	$mail->addAddress('adsparktester@gmail.com', 'Jaypee');
+		// $mail->SMTPDebug = 2;
+	 //    $mail->isSMTP();
+	 //    $mail->Host = 'smtp.gmail.com';
+	 //    $mail->Username = 'adspark.globe.edm@gmail.com';
+  //  		$mail->Password = 'kygyfrjosfldkaak';
+  //  		$mail->SMTPSecure = 'tls';
+  //  		$mail->SMTPAuth = true;
+  //  		$mail->Port = 587;
+  //  		$mail->setFrom('adspark.globe.edm@gmail.com', 'Globe Platinum');
+  //   	$mail->addAddress('adsparktester@gmail.com', 'Jaypee');
 
-	    // $mail->Host = 'smtpout.asia.secureserver.net';
-	    // $mail->Username = 'form@globeplatinumsurvey.com';
-	    // $mail->Password = 'admin123';
-	    // $mail->Port = 25;
-	    // $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
-	    // $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
-	    // $mail->addCC('adsparktester@gmail.com');
+	    $mail->Host = 'smtpout.asia.secureserver.net';
+	    $mail->Username = 'form@globeplatinumsurvey.com';
+	    $mail->Password = 'admin123';
+	    $mail->Port = 25;
+	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
+	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
+	    $mail->addCC('adsparktester@gmail.com');
 
 	    $mail->isHTML(true);
 	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
