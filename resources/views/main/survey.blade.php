@@ -89,7 +89,7 @@
 	 		</div>
 	 		<div id="YES">
 		 		<div class="form-group" id="question2">
-				    <label>Can you give Thea a tip on how she can be a better digital assistant?</label>
+				    <label>How would you rate your experience with Thea?</label>
 					<div class="form-check radio">
 					  	<label class="form-check-label">
 						  	<input class="form-check-input" id="question2" type="radio" name="question2" value="Very satisfied">
@@ -127,7 +127,7 @@
 					</div>
 		 		</div>
 	 			<div class="form-group" id="question3">
-			    	<label>Is there anything Thea can do to make your experience better?</label>
+			    	<label>Can you give Thea a tip on how she can be a better digital assistant?</label>
 		     		<textarea class="form-control" name="question3" id="question3" rows="4"></textarea>
 			  	</div>
 	 			<div class="form-group" id="question4">

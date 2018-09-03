@@ -99,7 +99,7 @@
 		    </tr>
 		    <tr>
 		        <td>
-		            <b>Can you give Thea a tip on how she can be a better digital assistant?</b>
+		            <b>How would you rate your experience with Thea?</b>
 		        </td>
 		        <td>
 		            ".($request->question2 ?? 'N/A')."
@@ -107,7 +107,7 @@
 		    </tr>
 		    <tr>
 		        <td colspan='2'>
-		            <b>Is there anything Thea can do to make your experience better?</b>
+		            <b>Can you give Thea a tip on how she can be a better digital assistant?</b>
 		        </td>
 		    </tr>
 		    <tr>
