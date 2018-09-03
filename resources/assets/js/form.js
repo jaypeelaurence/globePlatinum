@@ -4,28 +4,30 @@ $(document).ready(function(){
 
 	var $validMobileNUmber = 0;
 	var $valid = 0;
-	var $question7 = 0;
-	var $question1 = 0;
+	var $question5 = 0;
+	var $question6 = 0;
 	var $question2 = 0;
 	var $question3 = 0;
-	var $question5 = 0;
+	var $question4 = 0;
 
 	var validate = {
 		form: function(){
-			if($question1 == 1 && $question2 == 1 && $question5 == 1 && $question3 == 1){
+			$valid = 0;
+
+			if($validMobileNUmber == 1 && $question5 == 1 && $question6 == 1 && $question2 == 1 && $question3 == 1 && $question4 == 1){
 				$valid = 1;
 			}
 
-			if($validMobileNUmber == 1 && $valid == 1){
+			if($valid == 1){
 				$("form").children('button').prop('disabled',false);
 				$("form").children('button').removeClass('disable');
 			}else{
 				$("form").children('button').prop('disabled',true);
-				$("form").children('button').addClass('disable');
+				$("form").children('button	').addClass('disable');
 			}
 		},
 		status: function(){
-			console.log($validMobileNUmber + " | " + $valid + " / " + $question1 + " | " + $question2 + " | " + $question3 + " | " + $question5);
+			console.log([$validMobileNUmber, $question5, $question6, $question2, $question3, $question4]);
 		}
 	}
 
@@ -44,7 +46,7 @@ $(document).ready(function(){
 		}
 
 		validate.form();
-		validate.status(); //testing
+		validate.status();
 	});
 
 	$('input#mobileNumber').change(function() {
@@ -62,23 +64,48 @@ $(document).ready(function(){
 		}
 
 		validate.form();
-		validate.status(); //testing
+		validate.status();
   	});
 
-	$('input#question1').change(function(){
-		$("form").children('button').addClass('disable');
-
-		$valid = 0;
-		$question1 = 0;
-		$question2 = 0;
+	$('input#question5').change(function(){
+		$question5 = 0;
+		$question9 = 0;
 		
+		$('div#question9').css('display','none');
+
+		$('textarea#question9').val("");
+
+		if($(this).val() == "No"){
+			$question5 = 0;
+
+			$('div#question9').css('display','block');
+		}else{
+			$question5 = 1;
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('textarea#question9').keyup(function(){
+		if($(this).val().length >= 1){
+			$question5 = 1;
+		}else{
+			$question5 = 0;
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('input#question1').change(function(){
 		$('div#question2').css('display','none');
 
 		$('div#question3').css('display','none');
 		$('div#question4').css('display','none');
 		$('div#question6').css('display','none');
 		$('div#question8').css('display','none');
-
+		
 		$('input#question2').prop('checked',false);
 		$('textarea#question3').val("");
 		$('input#question4').prop('checked',false);
@@ -88,8 +115,16 @@ $(document).ready(function(){
 		$('textarea#question7').prop('disabled',true);
 
 		if($(this).val() == "No"){
+			$question6 = 0;
+			$question2 = 1;
+			$question3 = 1;
+			$question4 = 1;
 			$('div#question6').css('display','block');
-		}else{	
+		}else{
+			$question6 = 1;
+			$question2 = 0;
+			$question3 = 0;
+			$question4 = 0;
 			$('div#question2').css('display','block');
 			$('div#question3').css('display','block');
 			$('div#question4').css('display','block');
@@ -99,70 +134,8 @@ $(document).ready(function(){
 		validate.status(); //testing
 	});
 
-	$('input#question6').click(function(){
-		$question7 = 0;
-		$valid = 0;
-
-		$('textarea#question7').val('');
-
-		if($(this).val() == "Others"){
-			$('textarea#question7').prop('disabled',false);
-		}else{
-			$valid = 1;
-			$('textarea#question7').prop('disabled',true);
-		}
-
-		validate.form();
-		validate.status(); //testing
-	});
-
-	$('textarea#question7').keyup(function(){
-		if($(this).val().length >= 1){
-			$valid = 1;
-		}else{
-			$valid = 0;
-		}
-
-		validate.form();
-		validate.status(); //testing
-	});
-
-	$('input#question2').click(function(){
-		$question1 = 1;
-
-		validate.form();
-		validate.status(); //testing
-	});
-
-	$('input#question4').click(function(){
-		$question2 = 0;
-		$valid = 0;
-
-		$('textarea#question5').val('');
-
-		if($(this).val() == "No"){
-			$question2 = 1;
-			$question5 = 0;
-
-			$('div#question8').css('display','block');
-		}else{
-			$question2 = 1;
-			$question5 = 1;
-
-			$('div#question8').css('display','none');
-		}
-
-		validate.form();
-		validate.status(); //testing
-	});
-
-	$('textarea#question5').keyup(function(){
-		if($(this).val().length >= 1){
-			$question5 = 1;
-		}else{
-			$valid = 0;
-			$question5 = 0;
-		}
+	$('input#question2').change(function(){
+		$question2 = 1;
 
 		validate.form();
 		validate.status(); //testing
@@ -172,8 +145,63 @@ $(document).ready(function(){
 		if($(this).val().length >= 1){
 			$question3 = 1;
 		}else{
-			$valid = 0;
 			$question3 = 0;
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('input#question4').change(function(){
+		$('div#question8').css('display','none');
+
+		$('textarea#question8').val('');
+
+		if($(this).val() == "No"){
+			$question4 = 0;
+			$('div#question8').css('display','block');
+		}else{
+			$question4 = 1;
+			$('div#question8').css('display','none');
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('textarea#question8').keyup(function(){
+		if($(this).val().length >= 1){
+			$question4 = 1;
+		}else{
+			$question4 = 0;
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('input#question6').change(function(){
+		$question6 = 0;
+		$question7 = 0;
+
+		$('textarea#question7').val("");
+
+		if($(this).val() == "Others, please specify:"){
+			$('textarea#question7').prop('disabled',false);
+		}else{
+			$question6 = 1;
+			$('textarea#question7').prop('disabled',true);
+		}
+
+		validate.form();
+		validate.status(); //testing
+	});
+
+	$('textarea#question7').keyup(function(){
+		if($(this).val().length >= 1){
+			$question6 = 1;
+		}else{
+			$question6 = 0;
 		}
 
 		validate.form();

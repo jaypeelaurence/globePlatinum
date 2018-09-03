@@ -80,7 +80,7 @@ button:hover {
   font-size: 1em;
   font-weight: 400;
   color: #333333;
-  max-width: 450px;
+  max-width: 500px;
 }
 
 #contentWrapper form input {
@@ -164,7 +164,7 @@ button:hover {
 }
 
 #contentWrapper form .form-group .radio label {
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 #contentWrapper form .form-group .radio input {
@@ -207,7 +207,8 @@ button:hover {
 #contentWrapper form .form-group#question3,
 #contentWrapper form .form-group#question4,
 #contentWrapper form .form-group#question6,
-#contentWrapper form .form-group#question8 {
+#contentWrapper form .form-group#question8,
+#contentWrapper form .form-group#question9 {
   display: none;
 }
 

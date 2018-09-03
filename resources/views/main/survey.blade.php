@@ -22,6 +22,27 @@
 			    	<input type="text" class="form-control" name="mobileNumber" id="mobileNumber" aria-describedby="emailHelp" placeholder="XX-XXXXXXX" maxlength="9">
 			    </div>
 		  	</div>
+	 		<div class="form-group" id="question5">
+			    <label>Was the email you received from Globe Platinum easy to understand?</label>
+				<div class="form-check radio">
+				  	<label class="form-check-label">
+					  	<input class="form-check-input" id="question5" type="radio" name="question5" value="Yes">
+					  	<span class="span"></span>
+				    	Yes
+				  	</label>
+				</div>
+				<div class="form-check radio">
+				  	<label class="form-check-label">
+					  	<input class="form-check-input" type="radio" name="question5" id="question5" value="No">
+					  	<span class="span"></span>
+				   		No
+				  	</label>
+				</div>
+	 		</div>
+ 			<div class="form-group" id="question9">
+		    	<label>If no, can you give feedback on how to make communication better?</label>
+	     		<textarea class="form-control" name="question9" id="question9" rows="4"></textarea>
+		  	</div>
  			<div class="form-group" id="question1">
 			    <label>Were you able to chat with Thea?</label>
 				<div class="form-check radio">
@@ -38,27 +59,27 @@
 				   		No
 				  	</label>
 				</div>
-	 		</div>
+	 		</div>		
 	 		<div id="NO">
 		 		<div class="form-group" id="question6">
 				    <label>Why not?</label>
 					<div class="form-check radio">
 					  	<label class="form-check-label">
-						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="I don't have an FB messenger">
+						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="I don't have Facebook Messenger.">
 						  	<span></span>
 					    	I don't have Facebook Messenger.
 					  	</label>
 					</div>
 					<div class="form-check radio">
 					  	<label class="form-check-label">
-						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me">
+						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="This service is not relevant to me.">
 						  	<span></span>
 						   		This service is not relevant to me.
 					  	</label>
 					</div>
 					<div class="form-check radio">
 					  	<label class="form-check-label">
-						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others">
+						  	<input class="form-check-input" id="question6" type="radio" name="question6" value="Others, please specify:">
 						  	<span></span>
 					   		Others, please specify:
 					  	</label>
@@ -128,7 +149,7 @@
 			  	</div>
 			  	<div class="form-group" id="question8">
 				    <label>If no, what about your experience did you not like?</label>
-	     			<textarea class="form-control" id="question5" name="question5" rows="4"></textarea>
+	     			<textarea class="form-control" id="question8" name="question8" rows="4"></textarea>
 			  	</div>
 		  	</div>
 	 		<button type="submit" class="btn btn-primary">Submit</button>

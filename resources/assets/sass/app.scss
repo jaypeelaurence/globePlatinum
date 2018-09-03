@@ -82,7 +82,7 @@ a, button {
 			font-size: 1em;
 			font-weight: 400;
 			color: #333333;
-			max-width: 450px;
+			max-width: 500px;
 		}
 
 		input{
@@ -167,7 +167,7 @@ a, button {
 			    }
 
 			    label{
-			    	padding-left: 10px;
+			    	padding-left: 5px;
 			    }
 
 			    input{
@@ -207,8 +207,8 @@ a, button {
 			}
 
 
-			&#question2, &#question3, &#question4, &#question6, &#question8{
-				display: none;
+			&#question2, &#question3, &#question4, &#question6, &#question8, &#question9{
+				display: none; 
 			}	
 
 			&#mobileNumber{
