@@ -91,6 +91,8 @@
 		        <td colspan='2'>
 		            <b>Others, please specify:</b>
 		        </td>
+		    </tr>
+		    <tr>
 		        <td colspan='2'>
 		            ".($request->question7 ?? 'N/A')."
 		        </td>
@@ -107,6 +109,8 @@
 		        <td colspan='2'>
 		            <b>Is there anything Thea can do to make your experience better?</b>
 		        </td>
+		    </tr>
+		    <tr>
 		        <td colspan='2'>
 		            ".($request->question3 ?? 'N/A')."
 		        </td>
@@ -123,6 +127,8 @@
 		        <td colspan='2'>
 		            <b>If no, what about your experience did you not like?</b>
 		        </td>
+		    </tr>
+		    <tr>
 		        <td colspan='2'>
 		            ".($request->question8 ?? 'N/A')."
 		        </td>
@@ -130,14 +136,26 @@
 		</table>";
 		
 		$mail = new PHPMailer\PHPMailer();
-	    $mail->Host = 'smtpout.asia.secureserver.net';
-	    $mail->Username = 'form@globeplatinumsurvey.com';
-	    $mail->Password = 'admin123';
-	    $mail->Port = 25;
 
-	    $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
-	    $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
-	    $mail->addCC('adsparktester@gmail.com');
+		$mail->SMTPDebug = 2;
+	    $mail->isSMTP();
+	    $mail->Host = 'smtp.gmail.com';
+	    $mail->Username = 'adspark.globe.edm@gmail.com';
+   		// $mail->Password = 'kygyfrjosfldkaak';
+   		$mail->Password = 'kygyfr2josfldkaak';
+   		$mail->SMTPSecure = 'tls';
+   		$mail->SMTPAuth = true;
+   		$mail->Port = 587;
+   		$mail->setFrom('adspark.globe.edm@gmail.com', 'Globe Platinum');
+    	$mail->addAddress('jaypeelaurencecocjin@gmail.com', 'Jaypee');
+
+	    // $mail->Host = 'smtpout.asia.secureserver.net';
+	    // $mail->Username = 'form@globeplatinumsurvey.com';
+	    // $mail->Password = 'admin123';
+	    // $mail->Port = 25;
+	    // $mail->setFrom('form@globeplatinumsurvey.com', 'Globe Platinum');
+	    // $mail->addAddress('adspark.globe.edm@gmail.com', 'Ask Thea');
+	    // $mail->addCC('adsparktester@gmail.com');
 
 	    $mail->isHTML(true);
 	    $mail->Subject = 'Globe Platinum Ask Thea Survey';
@@ -146,9 +164,11 @@
 	    $fileAttachement = public_path() . '/files/' . $fileName;
     	$mail->addAttachment($fileAttachement);
 
-	    $mail->send();
-
-        return redirect('thankyou/'. strtotime('now'));
+	    if (!$mail->send()) {
+		    return redirect('/')->with('message', "Error: Please try again");
+		}else {
+       		return redirect('thankyou/'. strtotime('now'));
+		}
 	});
 
 	Route::get('/thankyou/{key}', function ($key) {

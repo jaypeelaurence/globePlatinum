@@ -14,6 +14,11 @@
 	</div>
 	<div id="contentWrapper">
 		<div id="container">
+			@if (session()->has('message'))
+				<div class='alert'>
+					<i class='fa fa-check-circle'></i>{{ session()->get('message') }}
+				</div>
+			@endif
 			@yield('body')
 		</div>
 	</div>

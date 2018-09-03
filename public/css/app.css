@@ -61,6 +61,20 @@ button:hover {
   margin-top: 50px;
 }
 
+#contentWrapper #container .alert {
+  padding: 10px 20px;
+  border: 0px;
+  background-color: #ffd6d6;
+  font-family: lato;
+  font-size: 1em;
+  font-weight: 400;
+  color: #470000;
+}
+
+#contentWrapper #container .alert i {
+  margin-right: 10px;
+}
+
 #contentWrapper div#thankyou {
   width: 100%;
   text-align: center;
