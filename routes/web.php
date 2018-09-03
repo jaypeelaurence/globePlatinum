@@ -146,7 +146,7 @@
    		$mail->SMTPAuth = true;
    		$mail->Port = 587;
    		$mail->setFrom('adspark.globe.edm@gmail.com', 'Globe Platinum');
-    	$mail->addAddress('jaypeelaurencecocjin@gmail.com', 'Jaypee');
+    	$mail->addAddress('adsparktester@gmail.com', 'Jaypee');
 
 	    // $mail->Host = 'smtpout.asia.secureserver.net';
 	    // $mail->Username = 'form@globeplatinumsurvey.com';

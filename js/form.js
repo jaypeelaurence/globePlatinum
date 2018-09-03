@@ -110,6 +110,10 @@ $(document).ready(function () {
 		}
 	};
 
+	$("input#mobileNumber").bind('cut copy paste', function ($char) {
+		$char.preventDefault();
+	});
+
 	$("input#mobileNumber").keypress(function ($char) {
 		var $charCode = $char.which ? $char.which : $char.keyCode;
 		if ($charCode > 31 && ($charCode < 48 || $charCode > 57)) return false;
