@@ -141,8 +141,7 @@
 	    $mail->isSMTP();
 	    $mail->Host = 'smtp.gmail.com';
 	    $mail->Username = 'adspark.globe.edm@gmail.com';
-   		// $mail->Password = 'kygyfrjosfldkaak';
-   		$mail->Password = 'kygyfr2josfldkaak';
+   		$mail->Password = 'kygyfrjosfldkaak';
    		$mail->SMTPSecure = 'tls';
    		$mail->SMTPAuth = true;
    		$mail->Port = 587;
